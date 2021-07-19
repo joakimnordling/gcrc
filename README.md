@@ -63,6 +63,8 @@ KEEP_EXTRA='["^latest$", "^(master|main)-"]'
 
 List of regex matches for important images that we want to keep an extra `KEEP_TAGS_MIN` items of. Formatted as a JSON list of strings.
 
+The default is to keep `latest` and any tags starting with `master-` or `main-` for people who tag their images like `<branch>-<timestamp or commit hash or uuid>`.
+
 You can also put these in a `.env` -file, but environment variables take priority over `.env`.
 
 ```
