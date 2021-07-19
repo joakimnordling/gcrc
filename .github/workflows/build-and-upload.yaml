@@ -1,0 +1,32 @@
+name: Build and upload to PyPI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_upload:
+    name: Build and upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Build images
+        run: |
+          set -e
+          poetry config pypi-token.pypi "${PYPI_TOKEN}"
+          poetry publish --build
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}

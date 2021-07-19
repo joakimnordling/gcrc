@@ -1,0 +1,3 @@
+[bandit]
+targets: .
+exclude: gcrc/tests/*,gcrc/*/tests/*,gcrc/*/*/tests/*,gcrc/*/*/*/tests/*
