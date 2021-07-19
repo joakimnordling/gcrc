@@ -4,7 +4,7 @@ If you use a CI system to push images to Google Container Registry you will even
 
 This tool helps you keep those costs reasonable, while allowing you to benefit from caches, keeping backups for rollbacks, etc.
 
-## Pre-requisites and setup
+## Prerequisites and setup
 
 - [Python 3.9+](https://www.python.org/downloads/)
 - [Gcloud SDK](https://cloud.google.com/sdk/docs/install) with an authentication token that has admin access to the registry properly configured
