@@ -88,6 +88,16 @@ def image_info(gcr_repo: str):
 
     for image in images:
         tags = gcloud.list_tags(image)
+
+        image_name = typer.style(
+            image.removeprefix(gcr_repo + "/"), fg=typer.colors.BLUE
+        )
+
+        if not tags:
+            ok = typer.style("EMPTY", fg=typer.colors.GREEN)
+            typer.echo(f"{image_name} | {ok} | No tags found, nothing to do.")
+            continue
+
         oldest_ts = None
         oldest_tag = None
         latest_ts = None
@@ -103,9 +113,6 @@ def image_info(gcr_repo: str):
 
         keep, clean = _pick_cleanup_tags(tags)
 
-        image_name = typer.style(
-            image.removeprefix(gcr_repo + "/"), fg=typer.colors.BLUE
-        )
         count = typer.style(f"{len(clean)}/{len(tags)}", fg=typer.colors.CYAN)
         oldest = typer.style(
             f"{oldest_ts.strftime(DT_FORMAT)} ({oldest_tag})", fg=typer.colors.MAGENTA

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gcrc"
-version = "1.0.3"
+version = "1.0.4"
 description = "Google Container Registry Cleanup utility"
 authors = ["Janne Enberg <janne.enberg@lietu.net>"]
 readme = "README.md"
