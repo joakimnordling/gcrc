@@ -1,3 +1,9 @@
+[[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lietu/gcrc/Build%20and%20upload%20to%20PyPI)](https://github.com/lietu/gcrc/actions/workflows/build-and-upload.yaml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PyPI](https://img.shields.io/pypi/v/gcrc)](https://pypi.org/project/gcrc/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gcrc)](https://pypi.org/project/gcrc/)
+[![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 # Google Container Registry Cleanup utility
 
 If you use a CI system to push images to Google Container Registry you will eventually run into a situation where you're paying more than you would like for the storage there.
