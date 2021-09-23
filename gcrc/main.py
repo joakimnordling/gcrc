@@ -154,7 +154,7 @@ def cleanup(gcr_repo: str):
                     fg=typer.colors.BRIGHT_YELLOW,
                 )
             )
-            # gcloud.delete_tag(image, tag)
+            gcloud.delete_tag(image, tag)
 
         if clean:
             typer.echo("")
