@@ -20,9 +20,14 @@ class ImageTag(pydantic.BaseModel):
 
     @classmethod
     def pre_process(cls, data):
+        try:
+            name = data["tags"][0]
+        except IndexError:
+            name = data["digest"]
+
         return {
             "digest": data["digest"],
-            "name": data["tags"][0],
+            "name": name,
             "tags": data["tags"],
             "timestamp": data["timestamp"]["datetime"],
         }
